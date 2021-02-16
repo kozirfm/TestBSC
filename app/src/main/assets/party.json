@@ -1,0 +1,18 @@
+{
+  "mainImage": "http://78.37.150.225:8189/travel/download/my_images/main.png",
+  "partyName": "Именины",
+  "organizer": {
+    "name": "Кристина",
+    "image": "http://78.37.150.225:8189/travel/download/my_images/organizer.png"
+  },
+  "members": [
+    {
+      "name": "Инесса",
+      "image": "http://78.37.150.225:8189/travel/download/my_images/member1.png"
+    },
+    {
+      "name": "Васисуалий",
+      "image": "http://78.37.150.225:8189/travel/download/my_images/member2.png"
+    }
+  ]
+}

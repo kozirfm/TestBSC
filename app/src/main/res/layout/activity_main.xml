@@ -2,17 +2,112 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
-    <TextView
+    <ProgressBar
+        android:id="@+id/mainProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        style="@style/ToolbarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Вечеринка" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainToolbar">
+
+        <ImageView
+            android:id="@+id/mainImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="@+id/mainLayout"
+            app:layout_constraintStart_toStartOf="@+id/mainLayout"
+            app:layout_constraintTop_toTopOf="@+id/mainLayout"
+            tools:ignore="ContentDescription"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/mainOrganizerImageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/mainLayout"
+            app:layout_constraintTop_toBottomOf="@+id/mainImageView"
+            tools:ignore="ContentDescription"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/mainPartyNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@+id/mainOrganizerImageView"
+            app:layout_constraintTop_toBottomOf="@+id/mainImageView"
+            tools:text="Именины" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/organizer"
+            app:layout_constraintStart_toStartOf="@+id/mainPartyNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/mainPartyNameTextView" />
+
+        <TextView
+            android:id="@+id/mainOrganizerNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/mainPartyNameTextView"
+            tools:text="Кристина" />
+
+        <TextView
+            android:id="@+id/mainMembersTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/members"
+            app:layout_constraintStart_toStartOf="@+id/mainLayout"
+            app:layout_constraintTop_toBottomOf="@+id/mainOrganizerImageView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainMembersRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/mainLayout"
+            app:layout_constraintEnd_toEndOf="@id/mainLayout"
+            app:layout_constraintStart_toStartOf="@id/mainLayout"
+            app:layout_constraintTop_toBottomOf="@+id/mainMembersTextView"
+            tools:listitem="@layout/item_member" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
